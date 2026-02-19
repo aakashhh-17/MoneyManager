@@ -7,6 +7,7 @@ import { setServers } from "node:dns/promises";
 import connectDB from "./configs/db.js";
 import cookieParser from "cookie-parser";
 import authRouter from "./routes/auth.route.js"
+import expenseRouter from "./routes/expense.route.js"
 
 setServers(["1.1.1.1", "8.8.8.8"]);
 
@@ -23,6 +24,7 @@ app.get("/", (req, res) => {
 });
 
 app.use('/api/auth', authRouter)
+app.use('/api/expense', expenseRouter)
 
 // MongoDB connection
 await connectDB();
