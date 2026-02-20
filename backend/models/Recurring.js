@@ -10,3 +10,7 @@ const recurringSchema = new mongoose.Schema({
   },
   nextRunDate: Date,
 });
+
+const Recurring = mongoose.model("Recurring", recurringSchema);
+
+export default Recurring;
